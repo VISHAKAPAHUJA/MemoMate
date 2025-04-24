@@ -1,0 +1,45 @@
+/* Crimson-black animated gradient background + animated particles */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #0f0f0f, #e1e5eb, #13033a, #1a0000);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    color: #f5f5f5;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Particle layer using pseudo-element */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(crimson 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: moveParticles 60s linear infinite;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  @keyframes moveParticles {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(40px, 40px);
+    }
+  }
+  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  

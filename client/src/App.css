@@ -1,0 +1,29 @@
+/* For a beautiful animated gradient background */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff0080, #7928ca, #2afadf, #a6ffcb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: smooth transitions for child elements */
+.container, .MuiContainer-root {
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
